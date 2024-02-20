@@ -1,64 +1,158 @@
-# BLOG
+# AstroPaper 📄
 
-我使用`TypeScript + Next + React`以及`Github API`构建里这个博客系统。
+![AstroPaper](public/astropaper-og.jpg)
+![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![GitHub](https://img.shields.io/github/license/satnaing/astro-paper?color=%232F3741&style=for-the-badge)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge)](https://conventionalcommits.org)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
 
-### 背景
+AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro blog theme. This theme is designed and crafted based on [my personal blog](https://satnaing.dev/blog).
 
-大二的时候，用`WordPress`构建了自己的博客系统，最后却因为没有坚持学习和分享而无疾而终。
+This theme follows best practices and provides accessibility out of the box. Light and dark mode are supported by default. Moreover, additional color schemes can also be configured.
 
-毕业后开始使用`Hexo`构建博客系统，却因为未备案和其他一些原因而荒废里`Hexo`。
+This theme is self-documented \_ which means articles/posts in this theme can also be considered as documentations. Read [the blog posts](https://astro-paper.pages.dev/posts/) or check [the README Documentation Section](#-documentation) for more info.
 
-`Hexo`很棒，但我想用自己所学的知识来构建自己的博客。
+## 🔥 Features
 
-### 功能
+- [x] type-safe markdown
+- [x] super fast performance
+- [x] accessible (Keyboard/VoiceOver)
+- [x] responsive (mobile ~ desktops)
+- [x] SEO-friendly
+- [x] light & dark mode
+- [x] fuzzy search
+- [x] draft posts & pagination
+- [x] sitemap & rss feed
+- [x] followed best practices
+- [x] highly customizable
+- [x] dynamic OG image generation for blog posts [#15](https://github.com/satnaing/astro-paper/pull/15) ([Blog Post](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/))
 
-- 博客文章实时更新
-- 支持RSS订阅
-- 响应式支持，移动端访问良好
-- 个人 GitHub 活跃状态示意图
+_Note: I've tested screen-reader accessibility of AstroPaper using **VoiceOver** on Mac and **TalkBack** on Android. I couldn't test all other screen-readers out there. However, accessibility enhancements in AstroPaper should be working fine on others as well._
 
+## ✅ Lighthouse Score
 
+<p align="center">
+  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fastro-paper.pages.dev%2F&form_factor=desktop">
+    <img width="710" alt="AstroPaper Lighthouse Score" src="AstroPaper-lighthouse-score.svg">
+  <a>
+</p>
 
-### 安装和使用
+## 🚀 Project Structure
 
-克隆本项目到本地之后，使用`nvm`来维护`node`版本，我已经将版本号写成里配置文件放在根目录下，你可以直接使用`nvm use`来启用我的版本。
-
-然后，使用:
+Inside of AstroPaper, you'll see the following folders and files:
 
 ```bash
-yarn && yarn dev
+/
+├── public/
+│   ├── assets/
+│   │   └── logo.svg
+│   │   └── logo.png
+│   └── favicon.svg
+│   └── astropaper-og.jpg
+│   └── robots.txt
+│   └── toggle-theme.js
+├── src/
+│   ├── assets/
+│   │   └── socialIcons.ts
+│   ├── components/
+│   ├── content/
+│   │   |  blog/
+│   │   |    └── some-blog-posts.md
+│   │   └── config.ts
+│   ├── layouts/
+│   └── pages/
+│   └── styles/
+│   └── utils/
+│   └── config.ts
+│   └── types.ts
+└── package.json
 ```
 
-即可安装依赖和开启开发模式。
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-我将所有的数据都放在`Github`上面，并且通过官方的接口进行数据读取，目前暂未接入文章编辑和发表的功能，因为这一切`Github`都为我们做好了。
+Any static assets, like images, can be placed in the `public/` directory.
 
-无论在什么平台，我们都可以通过`Github`的应用去添加新的文章和分类。
+All blog posts are stored in `src/content/blog` directory.
 
-### 须知
+## 📖 Documentation
 
-本项目需要用户创建自己的环境配置文件：`.env`:
+Documentation can be read in two formats\_ _markdown_ & _blog post_.
+
+- Configuration - [markdown](src/content/blog/how-to-configure-astropaper-theme.md) | [blog post](https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/)
+- Add Posts - [markdown](src/content/blog/adding-new-post.md) | [blog post](https://astro-paper.pages.dev/posts/adding-new-posts-in-astropaper-theme/)
+- Customize Color Schemes - [markdown](src/content/blog/customizing-astropaper-theme-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/)
+- Predefined Color Schemes - [markdown](src/content/blog/predefined-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/predefined-color-schemes/)
+
+> For AstroPaper v1, check out [this branch](https://github.com/satnaing/astro-paper/tree/astro-paper-v1) and this [live URL](https://astro-paper-v1.astro-paper.pages.dev/)
+
+## 💻 Tech Stack
+
+**Main Framework** - [Astro](https://astro.build/)  
+**Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
+**Component Framework** - [ReactJS](https://reactjs.org/)  
+**Styling** - [TailwindCSS](https://tailwindcss.com/)  
+**UI/UX** - [Figma](https://figma.com)  
+**Fuzzy Search** - [FuseJS](https://fusejs.io/)  
+**Icons** - [Boxicons](https://boxicons.com/) | [Tablers](https://tabler-icons.io/)  
+**Code Formatting** - [Prettier](https://prettier.io/)  
+**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  
+**Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
+**Linting** - [ESLint](https://eslint.org)
+
+## 👨🏻‍💻 Running Locally
+
+The easiest way to run this project locally is to run the following command in your desired directory.
 
 ```bash
-TOKEN = 'ghp_H4JTQ6AugTnC2WuM9EvlIY3AtKrx2'
-WEBSITE = 'http://localhost:3000'
+# npm 6.x
+npm create astro@latest --template satnaing/astro-paper
+
+# npm 7+, extra double-dash is needed:
+npm create astro@latest -- --template satnaing/astro-paper
+
+# yarn
+yarn create astro --template satnaing/astro-paper
 ```
 
-这里我去`github`获取了一个`Token`来让我具有了访问官方接口的能力，这个`Website`变量则跟本地开发接口和`RSS`生成有关。
+## Google Site Verification (optional)
 
-当你部署的时候，也需要为这个项目添加这两个环境变量。
+You can easily add your [Google Site Verification HTML tag](https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag) in AstroPaper using environment variable. This step is optional. If you don't add the following env variable, the google-site-verification tag won't appear in the html `<head>` section.
 
-总而言之：
+```bash
+# in your environment variable file (.env)
+PUBLIC_GOOGLE_SITE_VERIFICATION=your-google-site-verification-value
+```
 
-- token：GitHub Token
-- Website：线上域名
+## 🧞 Commands
 
-我将我的项目部署到了`vercel`上，本项目使用`Next`框架和`vercel`配合得相得益彰，一切部署的疑难都可以通过`Google`找到 😂
+All commands are run from the root of the project, from a terminal:
 
-> 国内不越过防火墙则访问不到，个人不介意
+> **_Note!_** For `Docker` commands we must have it [installed](https://docs.docker.com/engine/install/) in your machine.
 
+| Command                              | Action                                                                                                                           |
+| :----------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| `npm install`                        | Installs dependencies                                                                                                            |
+| `npm run dev`                        | Starts local dev server at `localhost:4321`                                                                                      |
+| `npm run build`                      | Build your production site to `./dist/`                                                                                          |
+| `npm run preview`                    | Preview your build locally, before deploying                                                                                     |
+| `npm run format:check`               | Check code format with Prettier                                                                                                  |
+| `npm run format`                     | Format codes with Prettier                                                                                                       |
+| `npm run sync`                       | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
+| `npm run cz`                         | Commit code changes with commitizen                                                                                              |
+| `npm run lint`                       | Lint with ESLint                                                                                                                 |
+| `docker compose up -d`               | Run AstroPaper on docker, You can access with the same hostname and port informed on `dev` command.                              |
+| `docker compose run app npm install` | You can run any command above into the docker container.                                                                         |
 
+> **_Warning!_** Windows PowerShell users may need to install the [concurrently package](https://www.npmjs.com/package/concurrently) if they want to [run diagnostics](https://docs.astro.build/en/reference/cli-reference/#astro-check) during development (`astro check --watch & astro dev`). For more info, see [this issue](https://github.com/satnaing/astro-paper/issues/113).
 
-### 其他
+## ✨ Feedback & Suggestions
 
-欢迎一起交流学习，期待你的邮件。
+If you have any suggestions/feedback, you can contact me via [my email](mailto:contact@satnaing.dev). Alternatively, feel free to open an issue if you find bugs or want to request new features.
+
+## 📜 License
+
+Licensed under the MIT License, Copyright © 2023
+
+---
+
+Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
